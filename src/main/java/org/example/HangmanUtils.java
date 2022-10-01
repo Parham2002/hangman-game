@@ -4,6 +4,7 @@ import java.util.ArrayList;
 import java.util.Random;
 
 public class HangmanUtils {
+
     static ArrayList<String> listOfWords = new ArrayList<>();
     private static int lives = 3;
 
