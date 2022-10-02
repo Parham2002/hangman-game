@@ -4,6 +4,6 @@ import java.util.Scanner;
 
 public class Main {
     public static void main(String[] args) {
-    HangmanGame.hangManGame(2);
+    HangmanGame.hangManGame(3);
     }
 }

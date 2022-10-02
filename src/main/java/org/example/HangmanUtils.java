@@ -31,9 +31,15 @@ public class HangmanUtils {
         }
         return dashWord;
     }
+
+    public static void showDashWord(String[] dashWord) {
+        for (String dash : dashWord) {
+            System.out.print(dash);
+        }
+    }
     public static boolean checkGuess(String guessLetter, String[] targetWord) {
         for ( String letter : targetWord) {
-            if (letter.equals(guessLetter)) {
+            if (letter.equalsIgnoreCase(guessLetter)) {
                 return true;
             }
         }
@@ -42,24 +48,16 @@ public class HangmanUtils {
 
     }
 
-    public static String updateDashWord(String guessLetter, String[] targetWord){
-        String updatedDashWord = "";
+    public static String[] updateDashWord(String guessLetter, String[] targetWord, String[] dashWord){
         for (int i = 0; i < targetWord.length; i++) {
-            if (targetWord[i].equals(guessLetter)) {
-                updatedDashWord += guessLetter;
+
+            if (targetWord[i].equalsIgnoreCase(guessLetter)) {
+                dashWord[i] = targetWord[i];
             }
-            updatedDashWord += "_";
+            System.out.print(dashWord[i]);
+
         }
-        return updatedDashWord;
-    }
-
-    public static int getLives() {
-        return lives;
-    }
-
-    public static int setLives(int lives) {
-        HangmanUtils.lives = lives;
-        return lives;
+        return dashWord;
     }
 
     public static void tryAgain() {
@@ -77,4 +75,15 @@ public class HangmanUtils {
             tryAgain();
         }
     }
+
+    public static int getLives() {
+        return lives;
+    }
+
+    public static int setLives(int lives) {
+        HangmanUtils.lives = lives;
+        return lives;
+    }
+
+
 }
