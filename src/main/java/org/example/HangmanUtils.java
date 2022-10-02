@@ -1,6 +1,7 @@
 package org.example;
 
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.Random;
 import java.util.Scanner;
 
@@ -58,6 +59,13 @@ public class HangmanUtils {
 
         }
         return dashWord;
+    }
+
+    public static boolean hasWon(String[] targetWord, String[] dashWord) {
+        if (Arrays.equals(targetWord, dashWord)) {
+            return true;
+        }
+        return false;
     }
 
     public static void tryAgain() {
