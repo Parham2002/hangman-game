@@ -2,6 +2,7 @@ package org.example;
 
 import java.util.ArrayList;
 import java.util.Random;
+import java.util.Scanner;
 
 public class HangmanUtils {
 
@@ -54,5 +55,26 @@ public class HangmanUtils {
 
     public static int getLives() {
         return lives;
+    }
+
+    public static int setLives(int lives) {
+        HangmanUtils.lives = lives;
+        return lives;
+    }
+
+    public static void tryAgain() {
+        Scanner scanner = new Scanner(System.in);
+        System.out.print("Would you like to try again? Y/N: ");
+        String reply = scanner.nextLine();
+        if (reply.equalsIgnoreCase("Y")) {
+            System.out.print("Enter number of lives you would like to have: ");
+            int tryAgainLives = scanner.nextInt();
+            HangmanGame.hangManGame(HangmanUtils.setLives(tryAgainLives));
+        } else if(reply.equalsIgnoreCase("N")) {
+            System.out.println("You have quit the game.");
+        } else {
+            System.out.println("wrong input.");
+            tryAgain();
+        }
     }
 }

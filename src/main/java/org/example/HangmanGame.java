@@ -3,15 +3,8 @@ package org.example;
 import java.util.Scanner;
 
 public class HangmanGame {
-
-    private int lives;
-
-    public HangmanGame(int lives) {
-        this.lives = lives;
-    }
-
-
-    public static void hangManGame() {
+    public static void hangManGame(int lives) {
+        HangmanUtils.setLives(lives);
         boolean gameStart = true;
         Scanner scanner = new Scanner(System.in);
         System.out.println("Welcome to Hangman!");
@@ -21,7 +14,7 @@ public class HangmanGame {
         while(gameStart) {
             if (HangmanUtils.getLives() > 0) {
                 System.out.println("Lives left: " + HangmanUtils.getLives());
-                System.out.println("Please type a letter: ");
+                System.out.print("Please type a letter: ");
                 String guessLetter = scanner.nextLine();
                 System.out.println("You have guessed the letter: " + guessLetter);
                 boolean isCorrect = HangmanUtils.checkGuess(guessLetter, targetWord);
@@ -30,24 +23,9 @@ public class HangmanGame {
                 System.out.println(updatedDashWord);
             } else {
                 System.out.println("You ran out of lives. Game over.");
-
                 gameStart = false;
+                HangmanUtils.tryAgain();
             }
-
-        }
-
-    }
-    public static void tryAgain() {
-        Scanner scanner = new Scanner(System.in);
-        System.out.println("Would you like to try again? Y/N");
-        String reply = scanner.nextLine();
-        if (reply.equalsIgnoreCase("Y")) {
-            hangManGame();
-        } else if(reply.equalsIgnoreCase("N")) {
-
-        } else {
-            System.out.println("wrong input.");
-            tryAgain();
         }
     }
 
