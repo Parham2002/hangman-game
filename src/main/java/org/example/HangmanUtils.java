@@ -58,7 +58,7 @@ public class HangmanUtils {
 
     }
     // updates the dashWord if the entered letter exists
-    public static String[] updateDashWord(String guessLetter, String[] targetWord, String[] dashWord){
+    public static void updateDashWord(String guessLetter, String[] targetWord, String[] dashWord){
         for (int i = 0; i < targetWord.length; i++) {
 
             if (targetWord[i].equalsIgnoreCase(guessLetter)) {
@@ -67,7 +67,6 @@ public class HangmanUtils {
             System.out.print(dashWord[i]);
 
         }
-        return dashWord;
     }
     // Checks whether the user has revealed all the letters
     public static boolean hasWon(String[] targetWord, String[] dashWord) {
