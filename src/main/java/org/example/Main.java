@@ -4,6 +4,7 @@ import java.util.Scanner;
 
 public class Main {
     public static void main(String[] args) {
-    HangmanGame.hangManGame(3);
+        // Calling the hangman method from the hangman class
+        HangmanGame.hangManGame(3);
     }
 }
