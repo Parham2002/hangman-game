@@ -20,3 +20,16 @@ If I could improve this project I would:
 3. add and pass some tests
 4. make the code tidier/more efficient
 5. add more comments
+
+Technologies and methods used:
+- Java
+- Git
+- Classes
+- Methods
+- Arrays
+- Getters/setters
+- Scanner
+- Conditional statements
+- Encapsulation
+
+![Screenshot (11)](https://user-images.githubusercontent.com/98832011/203296922-9670f018-9382-4dc7-a1a5-491ef2f8bc9a.png)
